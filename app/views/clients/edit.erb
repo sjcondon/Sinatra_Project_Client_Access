@@ -1,11 +1,12 @@
 <h1>Edit Client for <%= @client.name %></h1>
 <p><%= @error %></p>
-<form action="/clients/<%=@client.id%>" method="post">
+<form action="/clients/<%= @client.id%>" method="POST">
+    <input type="hidden" name="_method" value="patch">
     <label>Name</label>
-    <input type="text" name="name" value="<% @client.name %>">
+    <input type="text" name="client[name]" value="<%= @client.name %>">
     <label>Bio</label>
-    <textarea name="bio" value="<% @client.bio %>"></textarea>
+    <textarea name="client[bio]" value="<%= @client.bio %>"></textarea>
     <label>Image URL</label> 
-    <input type="text" name="image" value="<% @client.image %>">
-    <button type="submit">Edit Client</button>
+    <input type="text" name="client[image]" value="<%= @client.image %>">
+    <button type="submit" class="btn btn-light">Edit Client</button>
 </form>

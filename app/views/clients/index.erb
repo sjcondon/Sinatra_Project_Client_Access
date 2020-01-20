@@ -1,7 +1,10 @@
 <h1>Clients</h1>
 <a href="/clients/new"> Add your Client</a>
 <% @clients.each do |client| %>
-   <h2><a href="/clients/<% client.id %>" <%= client.name %></a></h2>
+   <h2><a href="/clients/<%= client.id %>"><%= client.name %></a></h2>
     <p><%= client.bio %></p>
     <img src="<%= client.image %>" alt="client">
+    <% if current_user == client.user %>
+        <a href="/clients/<%= client.id%>/edit">Edit</a>
+    <% end %>
 <% end %>

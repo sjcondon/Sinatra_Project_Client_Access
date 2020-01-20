@@ -10,13 +10,37 @@
     <title>ClientAccess</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="wrapper">
+      <div>
+      
+      <% if logged_in? %>
+      <div><nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/clients">Clients</a></li>
+        <li class="breadcrumb-item"><a href="/logout">Log out</a></li>
+        </ol>
+        </nav>
+        </div>
+        <%else%>
+        <div><nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/signup">Sign Up</a></li>
+        <li class="breadcrumb-item"><a href="/login">Log In</a></li>
+        </ol>
+        </nav>
+        </div>
+      <%end%>
+      </div>
+    
+      <div class="wrapper">
 
-        <%= yield %>
+        <%= yield %> 
 
       <footer class="branding">
         <small>&copy; 2020 <strong>ClientAccess</strong></small>

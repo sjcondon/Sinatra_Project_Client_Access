@@ -1,2 +1,12 @@
-<h1><%= @clients.title%></h1>
-<% end %>
+<h1><%= @client.name%></h1>
+<h2><%= @client.bio%></h2>
+<img src= "<%= @client.image%>" alt="client">
+<% if @client.user == current_user %>
+<form action="/clients/<%= @client.id %>"  method="POST">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" class="btn btn-light">Delete Client</button>
+    </form>
+    <% end %>
+
+
+    

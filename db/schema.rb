@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20200111214600) do
   create_table "clients", force: :cascade do |t|
     t.string  "name"
     t.text    "bio"
-    t.string  "image",   default: "https://cdn2.vectorstock.com/i/1000x1000/67/11/user-sign-icon-person-symbol-with-shadow-human-vector-26066711.jpg"
+    t.string  "image",   default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8SyFsniTLCC5pw6Y_GFgRuLR6-b4fKGmmGhGgj4Jd0tTuosAI&s"
     t.integer "user_id"
   end
 

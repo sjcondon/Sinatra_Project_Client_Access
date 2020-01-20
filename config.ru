@@ -6,3 +6,6 @@ end
 
 run ApplicationController
 use ClientsController
+use Rack::MethodOverride
+use UsersController
+use SessionsController
